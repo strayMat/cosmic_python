@@ -1,0 +1,32 @@
+{
+  "template": "https://gitlab.has-sante.fr/has-sante/public/cookiecutter-prod-python-has/",
+  "commit": "a50da3a65115a8cf5be5a6eec1d683c446919d95",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "cosmic_python",
+      "project_slug": "cosmic_python",
+      "package_name": "cosmic_python",
+      "friendly_name": "Cosmic_Python",
+      "author": "Matthieu Doutreligne",
+      "email": "matt.dout@gmail.com",
+      "project_type": "package",
+      "docker_enabled": "no",
+      "docs_enabled": "no",
+      "jupyter_notebooks_enabled": "no",
+      "linting_enabled": "yes",
+      "tests_enabled": "yes",
+      "remote_vcs_url": "https://github.com",
+      "remote_vcs_project_path": "strayMat/cosmic_python",
+      "project_repository_url": "https://github.com/strayMat/cosmic_python",
+      "documentation_url": "https://strayMat.pages.has-sante.fr/cosmic_python",
+      "used_language": "english",
+      "version": "0.0.0",
+      "_copy_without_render": [
+        "docs/source/_templates/*"
+      ],
+      "_template": "https://gitlab.has-sante.fr/has-sante/public/cookiecutter-prod-python-has/"
+    }
+  },
+  "directory": null
+}
