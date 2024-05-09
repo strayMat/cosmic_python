@@ -30,6 +30,7 @@ python = "^3.10"
 # Project-Specific
 python-dotenv = "^0.20.0"
 ruff = "^0.4.3"
+sqlalchemy = "^2.0.30"
 
 [tool.poetry.group.dev.dependencies]
 # Testing
@@ -61,6 +62,7 @@ pre-commit-hooks = "^4.4.0"
 #################################################################################
 # Tooling configs                                                               #
 #################################################################################
+ipdb = "^0.13.13"
 [tool.bandit]
 exclude_dirs = ["tests/", ".*$"]
 
