@@ -4,7 +4,7 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, clear_mappers
 
-from cosmic_python._02_repository import metadata, start_mappers
+from cosmic_python.orm import metadata, start_mappers
 
 
 @pytest.fixture
