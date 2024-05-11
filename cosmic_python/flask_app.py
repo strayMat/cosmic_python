@@ -9,7 +9,7 @@ import cosmic_python.repository as repository
 
 
 orm.start_mappers()
-get_session = sessionmaker(bind=create_engine(config.get_sqlite_api_url()))
+get_session = sessionmaker(bind=create_engine(config.get_sqlite_url()))
 app = Flask(__name__)
 
 
@@ -24,5 +24,5 @@ def allocate_endpoint():
     )
 
     batchref = model.allocate(line, batches)
-
+    session.commit()
     return {"batchref": batchref}, 201

@@ -10,7 +10,7 @@ def get_postgres_uri():
     return f"postgresql://{user}:{password}@{host}:{port}/{db_name}"
 
 
-def get_sqlite_api_url():
+def get_sqlite_url():
     return "sqlite:///simple_database.db"
 
 
