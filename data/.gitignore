@@ -3,3 +3,4 @@
 
 # ... except for this one.
 !.gitignore
+!simple_database.db

@@ -229,3 +229,23 @@ endif
 		printf "\n"; \
 	}' \
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
+
+# Docker stuff
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+
+all: down req build up
+
+build:
+	docker-compose build
+
+up:
+	docker-compose up -d app
+
+down:
+	docker-compose down
+
+logs:
+	docker-compose logs app | tail -100
+req:
+	poetry export -f requirements.txt > requirements.txt
