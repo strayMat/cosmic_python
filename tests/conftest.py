@@ -65,47 +65,6 @@ def sqlite_session(sqlite_db):
 
 
 @pytest.fixture
-def add_stock(sqlite_session):
-    batches_added = set()
-    skus_added = set()
-
-    def _add_stock(lines):
-        for ref, sku, qty, eta in lines:
-            sqlite_session.execute(
-                text(
-                    "INSERT INTO batches (reference, sku, _purchased_quantity, eta)"
-                    " VALUES (:ref, :sku, :qty, :eta)"
-                ),
-                dict(ref=ref, sku=sku, qty=qty, eta=eta),
-            )
-            [[batch_id]] = sqlite_session.execute(
-                text("SELECT id FROM batches WHERE reference=:ref AND sku=:sku"),
-                dict(ref=ref, sku=sku),
-            )
-            batches_added.add(batch_id)
-            skus_added.add(sku)
-        sqlite_session.commit()
-
-    yield _add_stock
-
-    for batch_id in batches_added:
-        sqlite_session.execute(
-            text("DELETE FROM allocations WHERE batch_id=:batch_id"),
-            dict(batch_id=batch_id),
-        )
-        sqlite_session.execute(
-            text("DELETE FROM batches WHERE id=:batch_id"),
-            dict(batch_id=batch_id),
-        )
-    for sku in skus_added:
-        sqlite_session.execute(
-            text("DELETE FROM order_lines WHERE sku=:sku"),
-            dict(sku=sku),
-        )
-        sqlite_session.commit()
-
-
-@pytest.fixture
 def restart_api():
     (
         Path(__file__).parents[1] / "cosmic_python" / "entrypoints" / "flask_app.py"
