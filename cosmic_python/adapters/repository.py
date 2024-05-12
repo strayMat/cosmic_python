@@ -1,5 +1,5 @@
 import abc
-import cosmic_python.model as model
+import cosmic_python.domain.model as model
 from typing import List
 
 

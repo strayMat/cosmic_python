@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, MetaData, String, Table
 from sqlalchemy.orm import registry, relationship
 
-import cosmic_python.model as model
+import cosmic_python.domain.model as model
 
 # orm logic
 metadata = MetaData()

@@ -11,7 +11,7 @@ from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import clear_mappers, sessionmaker
 
 from cosmic_python import config
-from cosmic_python.orm import metadata, start_mappers
+from cosmic_python.adapters.orm import metadata, start_mappers
 
 
 @pytest.fixture
@@ -107,7 +107,9 @@ def add_stock(sqlite_session):
 
 @pytest.fixture
 def restart_api():
-    (Path(__file__).parents[1] / "cosmic_python" / "flask_app.py").touch()
+    (
+        Path(__file__).parents[1] / "cosmic_python" / "entrypoints" / "flask_app.py"
+    ).touch()
     time.sleep(0.5)
     wait_for_webapp_to_come_up()
 

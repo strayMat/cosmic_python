@@ -2,11 +2,11 @@ from flask import Flask, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from cosmic_python import services
+from cosmic_python.service_layer import services
 import cosmic_python.config as config
-import cosmic_python.model as model
-import cosmic_python.orm as orm
-import cosmic_python.repository as repository
+import cosmic_python.domain.model as model
+import cosmic_python.adapters.orm as orm
+import cosmic_python.adapters.repository as repository
 
 
 orm.start_mappers()

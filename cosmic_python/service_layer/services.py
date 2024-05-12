@@ -1,5 +1,5 @@
-import cosmic_python.model as model
-from cosmic_python.repository import AbstractRepository
+import cosmic_python.domain.model as model
+from cosmic_python.adapters.repository import AbstractRepository
 
 
 class InvalidSku(Exception):

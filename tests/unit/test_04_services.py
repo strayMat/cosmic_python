@@ -1,7 +1,6 @@
-import random
-import cosmic_python.model as model
-import cosmic_python.services as services
-from cosmic_python.repository import FakeRepository
+import cosmic_python.domain.model as model
+import cosmic_python.service_layer.services as services
+from cosmic_python.adapters.repository import FakeRepository
 import pytest
 
 from tests.conftest import random_sku

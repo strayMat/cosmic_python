@@ -9,5 +9,5 @@ COPY cosmic_python/*.py /code/
 COPY data/* /code/data/
 
 WORKDIR /code/
-ENV FLASK_APP=cosmic_python/flask_app.py FLASK_DEBUG=1 PYTHONUNBUFFERED=1
+ENV FLASK_APP=cosmic_python/entrypoints/flask_app.py FLASK_DEBUG=1 PYTHONUNBUFFERED=1
 CMD flask run --host=0.0.0.0 --port=80

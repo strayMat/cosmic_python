@@ -1,11 +1,7 @@
 import pytest
 import requests
+
 from cosmic_python import config
-import cosmic_python.model as model
-import uuid
-
-from cosmic_python.repository import FakeRepository
-
 from tests.conftest import random_batchref, random_orderid, random_sku
 
 
