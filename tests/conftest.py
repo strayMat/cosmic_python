@@ -2,6 +2,7 @@
 
 import time
 from pathlib import Path
+import uuid
 
 import pytest
 import requests
@@ -109,3 +110,19 @@ def restart_api():
     (Path(__file__).parents[1] / "cosmic_python" / "flask_app.py").touch()
     time.sleep(0.5)
     wait_for_webapp_to_come_up()
+
+
+def random_suffix():
+    return uuid.uuid4().hex[:6]
+
+
+def random_sku(name=""):
+    return f"sku-{name}-{random_suffix()}"
+
+
+def random_batchref(name=""):
+    return f"batch-{name}-{random_suffix()}"
+
+
+def random_orderid(name=""):
+    return f"order-{name}-{random_suffix()}"
