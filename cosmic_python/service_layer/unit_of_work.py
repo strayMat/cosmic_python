@@ -1,3 +1,6 @@
+from __future__ import annotations
+# necessary for the return type of the __enter__ method
+
 import abc
 
 from sqlalchemy import create_engine
@@ -9,6 +12,9 @@ import cosmic_python.config as config
 
 class AbstractUnitOfWork(abc.ABC):
     batches: repository.AbstractRepository  # (1)
+
+    def __enter__(self) -> AbstractUnitOfWork:
+        return self
 
     def __exit__(self, *args):  # (2)
         self.rollback()  # (4)

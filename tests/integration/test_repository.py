@@ -1,8 +1,7 @@
-from datetime import datetime
 from sqlalchemy import text
-import cosmic_python.domain.model as model
+
 import cosmic_python.adapters.repository as repository
-from tests.unit.test_04_services import FakeSession
+import cosmic_python.domain.model as model
 
 
 # utils for test repository
